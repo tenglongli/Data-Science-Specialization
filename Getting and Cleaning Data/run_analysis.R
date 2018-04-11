@@ -19,4 +19,4 @@ har <- within(har,{act=factor(act,levels=seq(1,6),labels=c('Walking','Walking_Up
 har <- as_tibble(har)
 har1 <- har%>%group_by(sub,act)
 descp <- summarise_all(har1,mean)
-write_csv(descp,'descp.csv')
+write.table(descp,'descp.txt',row.names = FALSE)
